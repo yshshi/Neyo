@@ -16,8 +16,16 @@ export const upsertStreamUser = async (userData) => {
         return userData
     } catch (error) {
         console.error(error)
-        console.error("Stream API KEY and SECERT is missing")
+        console.error("Error while creating user in Stream")
     }
 }
 
-export const generateStreamToken = (userId) => {};
+export const generateStreamToken = (userId) => {
+    try {
+        const user_id = userId.toString();
+        return streamClient.createToken(user_id)
+    } catch (error) {
+        console.error(error)
+        console.error("Error while creating token in Stream")
+    }
+};
