@@ -10,6 +10,9 @@ import { useQuery } from '@tanstack/react-query'
 import { axiosInstance } from './lib/axios.js'
 import CallPage from './pages/CallPage.jsx'
 import ChatPage from './pages/ChatPage.jsx'
+import PageLoader from './components/PageLoader.jsx'
+import Layout from './components/Layout.jsx'
+import Friends from './pages/friends.jsx'
 
 function App() {
 
@@ -17,8 +20,13 @@ function App() {
     queryKey: ["authUser"],
 
     queryFn: async () => {
-      const res = await axiosInstance.get("/auth/check")
-      return res.data;
+      try{
+        const res = await axiosInstance.get("/auth/check")
+        return res.data;
+      }
+      catch{
+        return null
+      }
     },
   });
 
@@ -35,12 +43,14 @@ function App() {
   console.log(`isauthenticate user -- ${isAuthenticated}`)
   console.log(`isOnboarded user -- ${isOnboarded}`)
 
-  
+  if (isLoading) return <PageLoader/>
   return (
     <div className='bg-blue-200 h-screen'>
       <Routes>
         <Route path='/' element={ isAuthenticated  && isOnboarded ? (
-          <HomePage/>
+          <Layout showSideBar={true}>
+            <HomePage/>
+          </Layout>
         ) : (
           <Navigate to={!isAuthenticated ? "/login" : "/onboarding"}/>
         )}></Route>
@@ -61,6 +71,7 @@ function App() {
         <Route path='/notification' element={ isAuthenticated ? <NotificationPage />: <Navigate to="/login"></Navigate>}></Route>
         <Route path='/call' element={ isAuthenticated ? <CallPage />: <Navigate to="/login"></Navigate>}></Route>
         <Route path='/chat' element={ isAuthenticated ? <ChatPage />: <Navigate to="/login"></Navigate>}></Route>
+        <Route path='/friends' element={ isAuthenticated ? <Friends />: <Navigate to="/login"></Navigate>}></Route>
 
       </Routes>
       <Toaster/>

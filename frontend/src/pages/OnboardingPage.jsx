@@ -69,7 +69,7 @@ const OnboardingPage = () => {
               </div>
               {/* Generate random avatar button */}
             <div className=' flex items-center gap-2'>
-              <button type='button' onClick={handleRandomAvatar} className='btn btn-accent'>
+              <button type='button' onClick={handleRandomAvatar} className='btn btn-accent rounded-full'>
                 <UserRoundPen className=' size-4 mr-2'/>
                 Want a different look? Generate again
               </button>
@@ -86,7 +86,7 @@ const OnboardingPage = () => {
                     <input type='text'
                     name='fullName'
                     placeholder='Your Full Name'
-                    className='input input-bordered w-full'
+                    className='input input-bordered w-full rounded-full'
                     value={formState.fullName}
                     onChange={(e) => setFormState({...formState, fullName: e.target.value})}>
                     </input>
@@ -100,7 +100,7 @@ const OnboardingPage = () => {
                     <textarea
                     name='bio'
                     placeholder='Let us know who you are, what you do, or what you love!'
-                    className='textarea textarea-bordered w-full h-32 rounded-md'
+                    className='textarea textarea-bordered w-full h-32 rounded-full'
                     value={formState.bio}
                     onChange={(e) => setFormState({...formState, bio: e.target.value})}></textarea>
                   </div>
@@ -115,7 +115,7 @@ const OnboardingPage = () => {
                 name='nativeLanguage'
                 value={formState.nativeLanguage}
                 onChange={(e) => setFormState({ ...formState, nativeLanguage: e.target.value })}
-                className=' select select-bordered w-full'
+                className=' select select-bordered w-full rounded-full'
                 >
                   <option value="">Select your native language</option>
                   {
@@ -136,7 +136,7 @@ const OnboardingPage = () => {
                 name='learningLanguage'
                 value={formState.learningLanguage}
                 onChange={(e) => setFormState({ ...formState, learningLanguage: e.target.value })}
-                className=' select select-bordered w-full'
+                className=' select select-bordered w-full rounded-full'
                 >
                   <option value="">How do you identify?</option>
                   {
@@ -162,14 +162,14 @@ const OnboardingPage = () => {
                        name='location'
                        value={formState.location}
                        onChange={(e) => setFormState({...formState, location:e.target.value })}
-                       className='input input-bordered w-full pl-10'
+                       className='input input-bordered w-full pl-10 rounded-full'
                        placeholder='City, Country'
                       />
 
                     </div>
               </div>
 
-            <button className=' btn btn-primary w-full' disabled={isPending} type='submit'>
+            <button className=' btn btn-primary w-full rounded-full' disabled={isPending} type='submit'>
               {!isPending ? (
                 <>
                 <ShipWheelIcon className=' size-5 mr-2'/>

@@ -58,7 +58,7 @@ const SignupPage = () => {
                     </label>
                     <input type='text'
                     placeholder='Yash Singh(write your name that is mine)'
-                    className='input input-bordered w-full'
+                    className='input input-bordered w-full rounded-full'
                     value={singupData.fullName}
                     onChange={(e) => setSignupData({...singupData, fullName: e.target.value})}>
                     </input>
@@ -70,7 +70,7 @@ const SignupPage = () => {
                     </label>
                     <input type='email'
                     placeholder='yash@gmail.com'
-                    className='input input-bordered w-full'
+                    className='input input-bordered w-full rounded-full'
                     value={singupData.email}
                     onChange={(e) => setSignupData({...singupData, email: e.target.value})}>
                     </input>
@@ -82,7 +82,7 @@ const SignupPage = () => {
                     </label>
                     <input type='password'
                     placeholder='******'
-                    className='input input-bordered w-full'
+                    className='input input-bordered w-full rounded-full'
                     value={singupData.password}
                     onChange={(e) => setSignupData({...singupData, password: e.target.value})}>
                     </input>
@@ -106,7 +106,7 @@ const SignupPage = () => {
                 <button className=' btn btn-primary end-full' type='submit'>
                   {isPending ? (
                     <>
-                     <span className='loading loading-spinner loading-xs'></span>
+                     <span className='loading loading-spinner loading-xs rounded-full'></span>
                      Loading...
                     </>
                   ) : ("Create Account")}

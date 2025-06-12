@@ -8,10 +8,14 @@ const useAuthUser = () => {
   const authUser = useQuery({
     queryKey: ["authUser"],
     queryFn: async () => {
-      console.log(`Fetching authUser...`);
-      const data = await getAuthUser();
-      console.log("Received authUser data:", data);
-      return data;
+      try{
+        const data = await getAuthUser();
+       return data;
+      }
+      catch (error){
+        console.log(error)
+        return null;
+      }
     },
     retry: false,
   });
