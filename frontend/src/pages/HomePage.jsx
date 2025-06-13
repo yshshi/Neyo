@@ -91,7 +91,7 @@ const HomePage = () => {
               <span className="loading loading-spinner loading-lg" />
             </div>
           ) : recommendedUsers.length === 0 ? (
-            <div className="card bg-base-200 p-6 text-center">
+            <div className="card bg-black p-6 text-center">
               <h3 className="font-semibold text-lg mb-2">No fresh faces yet 🤷‍♂️</h3>
               <p className="text-base-content opacity-70">
                 Hang tight! We’ll show you new language buddies soon.

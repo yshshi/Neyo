@@ -45,7 +45,7 @@ function App() {
 
   if (isLoading) return <PageLoader/>
   return (
-    <div className='bg-blue-200 h-screen'>
+    <div className='bg-black h-screen'>
       <Routes>
         <Route path='/' element={ isAuthenticated  && isOnboarded ? (
           <Layout showSideBar={true}>

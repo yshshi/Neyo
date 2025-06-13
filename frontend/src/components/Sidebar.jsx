@@ -9,7 +9,7 @@ const Sidebar = () => {
     const currentPath = location.pathname;
 
   return (
-    <aside className='w-64 bg-blue-300 border-r border-base-300 hidden lg:flex flex-col h-screen sticky top-0 '>
+    <aside className='w-64 bg-black border-r border-base-300 hidden lg:flex flex-col h-screen sticky top-0 '>
         <div className=' p-5 border-b border-base-300'>
             <Link to="/" className=' flex items-center gap-2.5'>
             <BrickWallFire className='size-9 text-primary'/>
@@ -54,8 +54,8 @@ const Sidebar = () => {
                 </div>
                 <div className=' flex-1'>
                     <p className=' font-semibold text-sm'>{authUser?.fullName}</p>
-                    <p className='text-base text-rose-600 font-semibold flex items-center gap-3'>
-                    <span className='w-3.5 h-3.5 rounded-full bg-rose-600 shadow-lg ring-2 ring-rose-400/40 animate-pulse' />
+                    <p className='text-base text-green-500 font-semibold flex items-center gap-3'>
+                    <span className='w-3.5 h-3.5 rounded-full bg-green-500 shadow-lg ring-2 ring-rose-400/40 animate-pulse' />
                     Online
                     </p>
 
