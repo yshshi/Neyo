@@ -16,7 +16,6 @@
     "axios": "^1.9.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.514.0",
-    "neyo": "file:..",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
