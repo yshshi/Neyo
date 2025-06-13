@@ -4,13 +4,13 @@ import jwt from "jsonwebtoken"
 
 export async function getRecommendedUser(req, res) {
     try {
-        const currentUserId = req.User.id;
-        const currentUser = req.User
+        const currentUserId = req.user.id;
+        const currentUser = req.user
 
         const recommendedUsers = await User.find({
             $and: [
                 {_id: {$ne: currentUserId}},
-                {$id: {$nin: currentUser.friends}},
+                {_id: {$nin: currentUser.friends}},
                 {isOnboarded: true}
             ]
         })
@@ -110,12 +110,12 @@ export async function acceptFriendRequest(req, res) {
 
 export async function FriendRequests(req, res) {
     try {
-        const incoming_request = FriendRequest.find({
+        const incoming_request = await FriendRequest.find({
             recipient: req.user.id,
             status: "pending",
         }).populate("sender", "fullName profilePic nativeLanguage learningLanguage");
 
-        const already_accepted = FriendRequest.find({
+        const already_accepted = await FriendRequest.find({
             recipient: req.user.id,
             status: "pending",
         }).populate("sender", "fullName profilePic ");
