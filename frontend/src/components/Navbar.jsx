@@ -26,37 +26,39 @@ const Navbar = () => {
 // w-64 bg-blue-200 border-r border-base-300 hidden lg:flex flex-col h-screen sticky top-0 
 
   return (
-    <nav className=' bg-black border-b border-base-300 sticky top-0 z-30 h-19 flex items-center '>
-        <div className=' container mx-auto px-4 sm:px-6 lg:px-8'>
+    <nav className=' bg-black border-b border-gray-900 sticky top-0 z-30 h-19 flex items-center'>
+        <div className=' container mx-auto px-4 sm:px-6 lg:px-8 text-amber-50'>
             <div className=' flex items-center justify-end w-full gap-4 sm:gap-6'>
                 {
                     isChatPage && (
                         <div className=' pl-5'>
                             <Link to="/" className=' flex items-center gap-2.5'>
-                            <BrickWallFire className='size-9 text-primary'/>
+                            <BrickWallFire className='size-9 text-primary '/>
                             <span className=' text-3xl font-mono bg-clip-text text-transparent bg-blue-600 from-primary to-secondary tracking-wider'>Neyo</span>
                             </Link>
                         </div>   
                     )
                 }
 
-                <div className=' flex items-center gap-3 sm:gap-4'>
+                <div className=' flex items-center gap-3 sm:gap-4 ml-auto'>
                     <Link to={"/notification"}>
-                    <button className=' btn btn-ghost btn-circle'>
-                        <BellIcon className=' h-6 w-6 text-base-content opacity-70' />
+                    <button className=' btn btn-ghost btn-circle '>
+                        <BellIcon className=' h-6 w-6 opacity-70 text-amber-50' />
                     </button>
                     </Link>
                 </div>
 
                 <div className=' avatar'>
+                    <Link to="/">
                     <div className=' w-9 rounded-full'>
                         <img src={authUser?.profilePic} alt='user avatar' rel='noreferrer'/>
                     </div>
+                    </Link>
 
                 </div>
 
                 <button className='btn btn-ghost btn-circle' onClick={logoutMutation} disabled={isPending}>
-                <LogOutIcon className='h-6 text-base-content opacity-70' />
+                <LogOutIcon className='h-6 text-amber-50 opacity-70' />
                 </button>
 
             </div>

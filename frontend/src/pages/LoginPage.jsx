@@ -24,8 +24,8 @@ const LoginPage = () => {
     signupMutation(loginData)
   }
   return (
-    <div className='h-screen flex items-center justify-center p-4 sm:p-6 md:p-8'>
-      <div className=' border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden'>
+    <div className='h-screen flex items-center justify-center p-4 sm:p-6 md:p-8 text-amber-50'>
+      <div className=' border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-gray-900 rounded-xl shadow-lg overflow-hidden'>
 
         <div className=' w-full lg:w-1/2 p-4 sm:p-8 flex flex-col'>
           <div className='mb-4 flex items-center justify-start gap-2'>
@@ -59,7 +59,7 @@ const LoginPage = () => {
                     </label>
                     <input type='email'
                     placeholder='hello@example.com'
-                    className='input input-bordered w-full rounded-full'
+                    className='input input-bordered w-full rounded-full bg-black'
                     value={loginData.email}
                     onChange={(e) => setLoginData({...loginData, email: e.target.value})}>
                     </input>
@@ -71,7 +71,7 @@ const LoginPage = () => {
                     </label>
                     <input type='password'
                     placeholder='******'
-                    className='input input-bordered w-full rounded-full'
+                    className='input input-bordered w-full rounded-full bg-black'
                     value={loginData.password}
                     onChange={(e) => setLoginData({...loginData, password: e.target.value})}>
                     </input>

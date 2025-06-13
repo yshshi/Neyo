@@ -45,7 +45,7 @@ function App() {
 
   if (isLoading) return <PageLoader/>
   return (
-    <div className='bg-black h-screen'>
+    <div className='bg-black min-h-screen'>
       <Routes>
         <Route path='/' element={ isAuthenticated  && isOnboarded ? (
           <Layout showSideBar={true}>
@@ -68,10 +68,32 @@ function App() {
             )
           }
         />
-        <Route path='/notification' element={ isAuthenticated ? <NotificationPage />: <Navigate to="/login"></Navigate>}></Route>
-        <Route path='/call' element={ isAuthenticated ? <CallPage />: <Navigate to="/login"></Navigate>}></Route>
-        <Route path='/chat' element={ isAuthenticated ? <ChatPage />: <Navigate to="/login"></Navigate>}></Route>
-        <Route path='/friends' element={ isAuthenticated ? <Friends />: <Navigate to="/login"></Navigate>}></Route>
+        <Route path='/notification' element={ isAuthenticated && isOnboarded ? (
+          <Layout showSideBar={true}>
+            <NotificationPage/>
+          </Layout>
+        ) : (
+          <Navigate to={!isAuthenticated ? '/login' : '/onboarding'}/>
+        )}></Route>
+        <Route path='/call/:id' element={ isAuthenticated && isOnboarded ? (
+          <CallPage/>
+        ) : (
+          <Navigate to ={!isAuthenticated ? '/login' : '/onboarding'}/>
+        ) }></Route>
+        <Route path='/chat/:id' element={ isAuthenticated && isOnboarded ? (
+          <Layout showSideBar={false}>
+            <ChatPage/>
+          </Layout>
+        ) : (
+          <Navigate to ={!isAuthenticated ? '/login' : '/onboarding'}/>
+        ) }></Route>
+        <Route path='/friends' element={ isAuthenticated && isOnboarded ? (
+          <Layout showSideBar={true}>
+            <Friends/>
+          </Layout>
+        ) : (
+          <Navigate to ={!isAuthenticated ? '/login' : '/onboarding'}/>
+        ) }></Route>
 
       </Routes>
       <Toaster/>
