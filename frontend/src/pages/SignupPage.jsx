@@ -24,8 +24,8 @@ const SignupPage = () => {
     signupMutation(singupData)
   }
   return (
-    <div className='h-screen flex items-center justify-center p-4 sm:p-6 md:p-8'>
-      <div className=' border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden'>
+    <div className='h-screen flex items-center justify-center p-4 sm:p-6 md:p-8 text-amber-50'>
+      <div className=' border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-gray-900 rounded-xl shadow-lg overflow-hidden'>
 
         <div className=' w-full lg:w-1/2 p-4 sm:p-8 flex flex-col'>
           <div className='mb-4 flex items-center justify-start gap-2'>
@@ -58,7 +58,7 @@ const SignupPage = () => {
                     </label>
                     <input type='text'
                     placeholder='Yash Singh(write your name that is mine)'
-                    className='input input-bordered w-full rounded-full'
+                    className='input input-bordered w-full rounded-full bg-black'
                     value={singupData.fullName}
                     onChange={(e) => setSignupData({...singupData, fullName: e.target.value})}>
                     </input>
@@ -70,7 +70,7 @@ const SignupPage = () => {
                     </label>
                     <input type='email'
                     placeholder='yash@gmail.com'
-                    className='input input-bordered w-full rounded-full'
+                    className='input input-bordered w-full rounded-full bg-black'
                     value={singupData.email}
                     onChange={(e) => setSignupData({...singupData, email: e.target.value})}>
                     </input>
@@ -82,7 +82,7 @@ const SignupPage = () => {
                     </label>
                     <input type='password'
                     placeholder='******'
-                    className='input input-bordered w-full rounded-full'
+                    className='input input-bordered w-full rounded-full bg-black'
                     value={singupData.password}
                     onChange={(e) => setSignupData({...singupData, password: e.target.value})}>
                     </input>
@@ -94,7 +94,7 @@ const SignupPage = () => {
 
                 <div className='form-control'>
                   <label className='label cursor-pointer justify-start gap-2'>
-                    <input type='checkbox' className='checkbox checkbox-sm' required />
+                    <input type='checkbox' className='checkbox checkbox-sm bg-amber-50 text-teal-50' required />
                     <span className='text-xs leading-tight'>
                       I agree to the {" "}
                       <span className=' text-primary hover:underline'>terms of service</span> and{" "}

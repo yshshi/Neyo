@@ -29,7 +29,7 @@ export const logout = async () => {
 };
 
 export async function getUserFriends() {
-  const response = await axiosInstance.get("/users/friends");
+  const response = await axiosInstance.get("/user/friends");
   return response.data;
 }
 
