@@ -58,3 +58,5 @@ dump/
 
 # Build files for Docker or custom deployment
 docker-compose.override.yml
+
+frontend/.vite/
